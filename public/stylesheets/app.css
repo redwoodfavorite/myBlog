@@ -1,0 +1,151 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+a {
+  color: #747474;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+/*@font-face {
+  font-family: Geneva;
+  src: url('assets/Geneva.woff');
+}*/
+body {
+  font: 75%/1.5em "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
+  text-shadow: #000 0px 0px 0px;
+  font-size: 75%;
+  line-height:1.5em;
+  background-color: rgb(123, 140, 153);
+  /*background-color: rgb(223, 111, 111);*/
+}
+
+li#siteTitle{
+  margin-bottom: 30px;
+  font-size: 50px;
+  color: rgb(253, 248, 248);
+  font-weight: 700;
+}
+
+
+li.break {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+li.index {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #747474;
+}
+
+.index :hover {
+  color: #A2A2A2;
+}
+
+li#siteSubTitle {
+  text-align: right;
+  font-size: 20px;
+  color: #747474;
+  margin-bottom: 129px;
+}
+
+ul#nav {
+  margin: 80px 70px 0px 70px;
+  width: 78%;
+}
+
+ul#posts {
+  margin: 275px 60px 0px 0px;
+}
+
+ul#index {
+  margin-bottom: 40px;
+}
+
+li.post {
+
+}
+
+li.postTitle {
+  margin: 45px 0px 35px 0px;
+  font-size: 39px;
+  color: rgb(253, 248, 248);
+  font-weight: 200;
+  text-align: left;
+}
+
+li#quote {
+  margin-top: 65px;
+  font-size: 25px;
+  color: rgb(253, 248, 248);
+  line-height: 40px;
+  font-style: italic;
+}
+
+li.subTitle {
+  color: #A2A2A2;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+hr {
+  display: block; height: 1px;
+  border: 0; border-top: 3px solid rgb(194, 190, 190);
+  margin: 1em 0; padding: 0;
+}
+li.postContent {
+  font-size: 18px;
+  margin-bottom: 100px;
+  line-height: 30px;
+  color: rgb(253, 248, 248);
+  font-family: "Lucida Bright", Georgia, serif;
+}
+
+div#sidebar {
+  width: 20%;
+  overflow: auto;
+  display: inline-block;
+  top:0px;
+  position: fixed;
+}
+
+div#main {
+  display: inline-block;
+  width: 60%;
+  left: 20%;
+  position: absolute;
+  margin-left: 5%;
+  /*font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;*/
+}
+
+div#container {
+  display: inline;
+}
+
+
