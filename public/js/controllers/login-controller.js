@@ -1,7 +1,8 @@
 angular.module('app')
     .controller('loginController', ['$scope', '$http', 'userService', function($scope, $http, User){
         $scope.login = function(){
-            var config = {};
+            console.log('in login');
+            var config = {url: '/login', method: 'POST'};
 
             $http(config)
                 .success(function(data, status, headers, config){

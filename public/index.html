@@ -1,35 +1,67 @@
 <html ng-app="app">
   <head>
   </head>
-  <body>
+  <body onload="prettyPrint()">
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="js/prettify.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/prettify.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/desert.css">
+
 
     <div id="sidebar">
       <ul id="nav">
         <li id="siteTitle">
-          Bloggings
+          me.js
         </li>
-        <li id="siteSubTitle">and things</li>
+        <li id="siteSubTitle">code, music, games...</li>
         <li class="break"><hr></li>
         <ul id="index">
           <li class="index"> <a href="/">Blog</a></li>
           <li class="index"> <a href="/projects">Projects</a></li>
+          <li class="index"> <a href="/music">Music</a></li>
           <li class="index"> <a href="/about">About</a></li>
         </ul>
         <li class="break2"><hr></li>
-        <li id="quote">"This is an interesting quote..."</li>
+        <li id="quote">“I didn't fail the test, I just found 100 ways to do it wrong.”<br> - B. Franklin</li>
       </ul>
     </div>
 
     <div id='container' ng-view=''></div>
-
+    <script>
+      var imgArr = [
+        "PurpleGuyLeft.png",
+        "PurpleGuyRight.png",
+        "PurpleGuyLeftR1.png",
+        "PurpleGuyLeftR2.png",
+        "PurpleGuyLeftR3.png",
+        "PurpleGuyLeftR4.png",
+        "PurpleGuyLeftR5.png",
+        "PurpleGuyLeftR6.png",
+        "PurpleGuyLeftSLASH1.png",
+        "PurpleGuyLeftSLASH2.png",
+        "PurpleGuyLeftSLASH3.png",
+        "PurpleGuyLeftSLASH4.png",
+        "PurpleGuyLeftSLASH5.png",
+        "PurpleGuyRightSLASH1.png",
+        "PurpleGuyRightSLASH2.png",
+        "PurpleGuyRightSLASH3.png",
+        "PurpleGuyRightSLASH4.png",
+        "PurpleGuyRightSLASH5.png",
+        "PurpleGuyRightR1.png",
+        "PurpleGuyRightR2.png",
+        "PurpleGuyRightR3.png",
+        "PurpleGuyRightR4.png",
+        "PurpleGuyRightR5.png",
+        "PurpleGuyRightR6.png"
+      ]
+    </script>
     <script src="./js/app.js"></script>
-    <script src="./js/main-controller.js"></script>
-    <script src="./js/login-controller.js"></script>
-    <script src="./js/request-service.js"></script>
-    <script src="./js/user-service.js"></script>
-    <script src="./js/checkUser-directive.js"></script>
+    <script src="./js/controllers/main-controller.js"></script>
+    <script src="./js/controllers/login-controller.js"></script>
+    <script src="./js/services/request-service.js"></script>
+    <script src="./js/services/user-service.js"></script>
+    <script src="./js/directives/epiceditor-directive.js"></script>
   </body>
 </html>

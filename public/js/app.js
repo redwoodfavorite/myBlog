@@ -18,6 +18,13 @@ angular.module('app')
                     isFree: true
                 }
             })
+            .when('/music', {
+                templateUrl: 'views/music.html',
+                controller: '',
+                access: {
+                    isFree: true
+                }
+            })
             .when('/projects', {
                 templateUrl: 'views/projects.html',
                 controller: '',
@@ -27,14 +34,14 @@ angular.module('app')
             })
             .when('/new', {
                 templateUrl: 'views/new.html',
-                controller: '',
+                controller: 'postController',
                 access: {
                     isFree: false
                 }
             })
             .when('/login', {
                 templateUrl: 'views/login.html',
-                controller: '',
+                controller: 'loginController',
                 access: {
                     isFree: true
                 }
@@ -50,9 +57,7 @@ angular.module('app')
 
 app.run(['$rootScope', '$location', 'userService', function($rootScope, $location, user){
     $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute){
-        console.log(event, currRoute, prevRoute.access);
-        console.log(prevRoute.access.isFree, user.isLogged);
-        if (!user.isLogged){
+        if (!user.isLogged && !currRoute.access.isFree){
             $location.path('/login');
         }
     });
