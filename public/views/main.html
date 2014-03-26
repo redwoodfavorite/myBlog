@@ -1,36 +1,36 @@
 
 <div id="main">
-  <li class="postPhoto"><img class="icon" src="/assets/PurpleGuyRightR2.png"/></li>
   <ul data="posts" ng-repeat="post in posts track by $index" id="posts">
     <li class="post">
       <ul>
+        <li class="prePost"><img id="ninja" src="assets/purpleninja.gif"></img><span class="date">March 20, 2014</span></li>
         <li class="break"><hr></li>
-        <li class="postTitle">Rebinding default keys in Ace Editor</li>
-        <li class="subTitle">How to do it and what it's good for &diams; &diams; &diams;</li>
+        <li class="postTitle">Rebinding keys in Ace editor</li>
+        <li class="subTitle"> How to do it and what it's good for </li>
         <li class="postContent">
-        <p>Recently, a project I've been working on needed a code editor that was partially read-only. </p>
-         <p>I was trying to prevent default on backspace for certain lines, but it didn't seem to be quite enough.  After hours of investigation, here is the solution I found:</p>
+            <p>Recently, a project I've been working on needed a code editor that was partially read-only. </p>
+             <p>I was trying to prevent default on backspace for certain lines, but it didn't seem to be quite enough.  After hours of investigation, here is the solution I found:</p>
         <pre class="prettyprint code">
-          <code>
-      var editor = ace.edit('your-editors-id-tag');
-      var readOnlyRows = [0,1,2,3];
+          <code class="prettyprint">
+    var editor = ace.edit('your-editors-id-tag');
+    var readOnlyRows = [0,1,2,3];
 
-      editor.commands.addCommands([{
-        name: "backspace",
-        bindKey: {
-          win: "Backspace",
-          mac: "Backspace",
-        },
-        exec: function(editor) {
-          if(readOnlyRows.indexOf(editor.getCursorPosition().row) != -1){
-            return false;
-          } else {
-            editor.remove("left");
-          }
-        },
-        multiSelectAction: "forEach",
-        scrollIntoView: "cursor"
-      }]);
+    editor.commands.addCommands([{
+      name: "backspace",
+      bindKey: {
+        win: "Backspace",
+        mac: "Backspace",
+      },
+      exec: function(editor) {
+        if(readOnlyRows.indexOf(editor.getCursorPosition().row) != -1){
+          return false;
+        } else {
+          editor.remove("left");
+        }
+      },
+      multiSelectAction: "forEach",
+      scrollIntoView: "cursor"
+    }]);
           </code>
         </pre>
         <p>The idea here is that you are overriding the default backspace event in Ace Editor and reimplimenting it with an additional IF statement checking whether to cursor is positioned on a read-only row.
