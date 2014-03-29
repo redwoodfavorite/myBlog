@@ -46,20 +46,17 @@ angular.module('app')
                     isFree: true
                 }
             })
-            .otherwise({
-                redirectTo: '/'
-            });
 
 
         $locationProvider.html5Mode(true);
 
     }]);
 
-app.run(['$rootScope', '$location', 'userService', function($rootScope, $location, user){
-    $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute){
-        if (!user.isLogged && !currRoute.access.isFree){
-            $location.path('/login');
-        }
-    });
-}]);
+// app.run(['$rootScope', '$location', 'userService', function($rootScope, $location, user){
+//     $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute){
+//         if (currRoute.access && !user.isLogged && !currRoute.access.isFree){
+//             $location.path('/login');
+//         }
+//     });
+// }]);
 

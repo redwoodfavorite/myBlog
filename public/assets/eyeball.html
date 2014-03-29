@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body onload="follow();">
+    <center>
+      <input id="typeHere" style="font-size: 40px; width: 40%;"></input>
+    </center>
+      <img class="eyeball" src="http://previewcf.turbosquid.com/Preview/2012/03/08__10_14_33/Human_Eye.png6f3d149f-d347-4d60-af00-0d24d6ef2820Large.jpg" style="width: 25%; position: relative; left: 18%; top: 250px"/>
+      <img class="eyeball" src="http://previewcf.turbosquid.com/Preview/2012/03/08__10_14_33/Human_Eye.png6f3d149f-d347-4d60-af00-0d24d6ef2820Large.jpg" style="width: 25%; position: relative; left: 30%; top: 250px"/>
+      <span id="putsHere" style="position:absolute; font-size: 20px; opacity: 0;"></span>
+  </body>
+  <script>
+    var follow = function follow(){
+      var rad2deg = 180/Math.PI;
+
+      var typeHere = document.getElementById('typeHere');
+      var putsHere = document.getElementById('putsHere');
+      var eyeballs = document.getElementsByClassName('eyeball');
+
+      eyeballs[0].style.WebkitTransform="rotateZ(105deg)";
+      eyeballs[1].style.WebkitTransform="rotateZ(105deg)";
+
+      typeHere.addEventListener('keydown', function(e){
+        putsHere.innerText = typeHere.value;
+        var angle1 = Math.atan(putsHere.offsetWidth / 200);
+        var angle2 = Math.atan((640 - putsHere.offsetWidth) / 200);
+        if(angle2 < 20){
+          angle2 = -angle2;
+        }
+        eyeballs[0].style.WebkitTransform="rotateZ(" + ((angle1 * rad2deg) + 105) + "deg)";
+        eyeballs[1].style.WebkitTransform="rotateZ(" + 105 - ((angle2 * rad2deg)) + "deg)";
+
+      })
+    };
+  </script>
+</html>
