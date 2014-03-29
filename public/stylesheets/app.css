@@ -47,7 +47,7 @@ body {
 
 li#siteTitle{
   margin-bottom: 46px;
-  font-size: 70px;
+  font-size: 75px;
   text-shadow: 1px 1px rgb(113, 96, 128),2px 2px rgb(113, 96, 128),3px 3px rgb(113, 96, 128),4px 4px rgb(113, 96, 128),5px 5px rgb(113, 96, 128),6px 6px rgb(113, 96, 128),7px 7px rgb(113, 96, 128),8px 8px rgb(113, 96, 128),9px 9px rgb(113, 96, 128),10px 10px rgb(113, 96, 128);
   color: rgb(253, 248, 248);
   font-weight: 700;
@@ -74,7 +74,7 @@ li.break {
 
 li.index {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 17px;
   color: #747474;
 }
 
@@ -117,8 +117,9 @@ li.postTitle {
   margin-bottom: 22px;
   font-size: 34px;
   color: rgb(253, 248, 248);
-  text-shadow: 4px 4px rgb(113, 96, 128);
-  font-weight: 700px;
+  /*text-shadow: 1px 1px rgb(113, 96, 128), 2px 2px rgb(113, 96, 128), 3px 3px rgb(113, 96, 128), 4px 4px rgb(113, 96, 128);*/
+  font-weight: 900px;
+  text-align: center;
   font-family: helvetica;
 }
 
@@ -136,6 +137,7 @@ li#quote {
 li.subTitle {
   color: #585858;
   font-size: 18px;
+  text-align: center;
   font-style: italic;
   margin-bottom: 50px;
 }
@@ -148,8 +150,8 @@ hr {
 
 li.postContent {
   font-size: 17px;
-  margin-bottom: 100px;
-  line-height: 30px;
+  margin-bottom: 150px;
+  line-height: 27px;
   font-weight: 300;
   color: rgb(253, 248, 248);
 }
@@ -176,7 +178,7 @@ div#sidebar {
 div#main {
   display: inline-block;
   padding: 182px 0px 0px 0px;
-  width: 60%;
+  width: 50%;
   left: 18%;
   position: absolute;
   margin-left: 5%;
