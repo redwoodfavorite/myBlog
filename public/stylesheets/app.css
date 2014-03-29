@@ -49,8 +49,8 @@ li#siteTitle{
   margin-bottom: 58px;
   margin-top: 140px;
   font-size: 100px;
-  /*text-shadow: 1px 1px #646883, 2px 2px #646883, 3px 3px #646883, 4px 4px #646883, 5px 5px #646883, 6px 6px #646883, 7px 7px #646883, 8px 8px #646883, 9px 9px #646883, 10px 10px #646883;*/
-  color: #2A2C38;
+  text-shadow: 1px 1px darkgray, 2px 2px darkgray, 3px 3px darkgray, 4px 4px darkgray, 5px 5px darkgray, 6px 6px darkgray, 7px 7px darkgray, 8px 8px darkgray, 9px 9px darkgray, 10px 10px darkgray;
+  color: white;
   font-weight: 700;
 }
 
@@ -77,18 +77,18 @@ li.index {
   display: block;
   margin-bottom: 20px;
   font-size: 17px;
-  color: white;
 }
 
 li.index a {
-  color: #2A2C38;
+  color: lightgray;
 }
 
 li.post {
+  border-radius: 4px;
   padding: 18px 25px;
   background-color: #2A2C38;
   margin: 0px 0px 65px 0px;
-  box-shadow: 6px 6px 0px 0px #1C1B24;
+  box-shadow: 8px 8px 0px 0px #1C1B24;
 }
 
 li.prepost {
@@ -113,7 +113,7 @@ li#siteSubTitle {
 ul#nav {
   position: relative;
   top: 80px;
-  left: 15%;
+  left: 22%;
   width: 70%;
 }
 
