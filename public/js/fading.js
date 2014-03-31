@@ -38,3 +38,9 @@ $(document).ready(function(){
     })
     });
 });
+
+window.onload=function(){
+    setTimeout(function(){
+        scrollTo(0,-1);
+    },0);
+};
