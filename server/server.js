@@ -3,7 +3,7 @@ var http          = require('http');
 var path          = require('path');
 var db            = require('mongodb');
 var mongoose      = require('mongoose');
-var LocalStrategy = require('passport-local').Strategy;
+// var LocalStrategy = require('passport-local').Strategy;
 // var db            = require('../db/db.js')
 
 // var auth          = require('./auth');
@@ -44,22 +44,38 @@ app.set('port', process.env.PORT || 9999);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
+// app.use(express.urlencoded());
+// app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, '../public')));
 // app.use(passport.initialize());
-app.use(express.cookieParser());
-app.use(express.bodyParser());
-app.use(express.session({ secret: 'cat in the bag' }));
+// app.use(express.cookieParser());
+// app.use(express.bodyParser());
+// app.use(express.session({ secret: 'cat in the bag' }));
 // app.use(passport.session());
 app.use(app.router);
 
 app.get('/post', function(req, res){
-    res.send(['1']);
+  res.send(['1']);
+});
+
+app.get('/about', function(req, res){
+  res.sendfile('public/index.html');
+});
+
+app.get('/music', function(req, res){
+  res.sendfile('public/index.html');
+});
+
+app.get('/projects', function(req, res){
+  res.sendfile('public/index.html');
+});
+
+app.get('/blog', function(req, res){
+  res.sendfile('public/index.html');
 });
 
 app.get('/login', function(req, res){
-    res.sendfile('../public/login.html');
+  res.sendfile('../public/login.html');
 });
 
 // app.get('/new', function(req, res, next) {

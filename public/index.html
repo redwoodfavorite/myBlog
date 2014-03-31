@@ -7,63 +7,35 @@
     <script type="text/javascript" src="js/prettify.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheets/app.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/prettify.css">
-    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/desert.css"> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/fading.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/desert.css">
     <!-- // <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=js&skin=sunburst"></script> -->
 
-
-    <div id="sidebar">
+    <div id="home"><a href="#"><img id="home" src="assets/homeicon.png"/></a></div>
+    <div id="topbar">
       <ul id="nav">
         <li id="siteTitle">
-          <span>me.js</span>
-          <!-- <img id="ninja" src="assets/purpleninja.gif"></img> -->
+          <span>.js</span>
         </li>
         <li id="siteSubTitle">Joseph Sample</li>
-        <li class="break"><hr></li>
         <ul id="index">
-          <li class="index"> <a href="/">Blog</a></li>
-          <li class="index"> <a href="/projects">Projects</a></li>
-          <li class="index"> <a href="/music">Music</a></li>
-          <li class="index"> <a href="/about">About</a></li>
+          <li class="index" id="blog"> <a href="/">Blog</a></li>
+          <li class="index" id="projects"> <a href="/projects">Projects</a></li>
+          <li class="index" id="music"> <a href="/music">Music</a></li>
+          <li class="index" id="about"> <a href="/about">About</a></li>
         </ul>
-        <li id="quote"><hr><p id="quote">“I didn't fail the test, I just found 100 ways to do it wrong.”<br> - B. Franklin</p></li>
+        <!-- <li id="quote"><hr><p id="quote">“I didn't fail the test, I just found 100 ways to do it wrong.”<br> - B. Franklin</p></li> -->
       </ul>
     </div>
 
     <div id='container' ng-view=''></div>
-    <script>
-    //   var imgArr = [
-    //     "PurpleGuyLeft.png",
-    //     "PurpleGuyRight.png",
-    //     "PurpleGuyLeftR1.png",
-    //     "PurpleGuyLeftR2.png",
-    //     "PurpleGuyLeftR3.png",
-    //     "PurpleGuyLeftR4.png",
-    //     "PurpleGuyLeftR5.png",
-    //     "PurpleGuyLeftR6.png",
-    //     "PurpleGuyLeftSLASH1.png",
-    //     "PurpleGuyLeftSLASH2.png",
-    //     "PurpleGuyLeftSLASH3.png",
-    //     "PurpleGuyLeftSLASH4.png",
-    //     "PurpleGuyLeftSLASH5.png",
-    //     "PurpleGuyRightSLASH1.png",
-    //     "PurpleGuyRightSLASH2.png",
-    //     "PurpleGuyRightSLASH3.png",
-    //     "PurpleGuyRightSLASH4.png",
-    //     "PurpleGuyRightSLASH5.png",
-    //     "PurpleGuyRightR1.png",
-    //     "PurpleGuyRightR2.png",
-    //     "PurpleGuyRightR3.png",
-    //     "PurpleGuyRightR4.png",
-    //     "PurpleGuyRightR5.png",
-    //     "PurpleGuyRightR6.png"
-    //   ]
-    // </script>
     <div id="follow">
         <span>
-            follow me:
-            <img class="logo" src="/assets/twitter-logo.png"/>
-            <img class="logo" src="/assets/facebooklogo.png"/>
-            <img class="logo" src="/assets/linkedin.png"/>
+            <a href="#"><img class="logo" src="/assets/twitter-logo.png" target="_blank"/></a>
+            <a href="https://github.com/redwoodfavorite" target="_blank"><img class="logo" src="/assets/github-logo.png"/></a>
+            <a href="https://www.linkedin.com/pub/joseph-sample/92/879/b20" target="_blank"><img class="logo" src="/assets/linkedin.png"/></a>
+            <a href="https://www.facebook.com/joseph.sample" target="_blank"><img class="logo" src="/assets/facebooklogo.png"/></a>
         </span>
     </div>
     <script src="./js/app.js"></script>

@@ -2,35 +2,35 @@
 <div id="main">
   <ul data="posts" id="posts">
     <li class="post">
-      <ul>
+      <ul class="post">
         <li class="prePost"><span class="date">March 20, 2014</span></li>
         <li class="break"><hr></li>
         <li class="postTitle">Tracking cursor position in a textarea</li>
         <li class="subTitle"> HINT: it involves an invisible span!</li>
         <li class="postContent">
-            <p> Open <a href="/assets/eyeball.html" target="_self">this html page</a> and observe the problem. </p>
-             <p> How does one track cursor position while typing?  Cursor position would be different than mouse position here, because the mouse does not move while characters are added to the screen.  </p>
-             <p> If only it were as simple as: </p>
-        <pre class="prettyprint code">
-          <code class="prettyprint">
-    var inputEl = document.getElementById('myInput');
+          <p> Open <a href="/assets/eyeball.html" target="_self">this html page</a> and observe the problem. </p>
+          <p> How does one track cursor position while typing?  Cursor position would be different than mouse position here, because the mouse does not move while characters are added to the screen.  </p>
+          <p> If only it were as simple as: </p>
+          <pre class="prettyprint code">
+            <code class="prettyprint">
+  var inputEl = document.getElementById('myInput');
 
-    var position = inputEl.getCursorPosition();
-          </code>
-        </pre>
-        <p> Unfortunately no such method exists.  There are ways around the problem however. The particular solution I employed to
-          in my eyeball page involved an invisible span element.</p>
-        <p> The trick here is that on every keydown event you are populating a span with the same text as the input field.  Because spans adjust their size to their content, you can effectively find the width of the input text by measuring the width of the span.  More specifically, you would access the
+  var position = inputEl.getCursorPosition();
+            </code>
+          </pre>
+          <p> Unfortunately no such method exists.  There are ways around the problem however. The particular solution I employed to in my eyeball page involved an invisible span element.</p>
+          <p> The trick here is that on every keydown event you are populating a span with the same text as the input field.  Because spans adjust their size to their content, you can effectively find the width of the input text by measuring the width of the span.  More specifically, you would access the
           <b> offset width</b> of the span.  And then of course we want to hide the span because it's not something we want the user to know about.  Here's an idea of what that'd look like.</p>
         <pre class="prettyprint code">
           <code class="prettyprint">
-    var mySpan = document.getElementById('mySpan');
-    var myInput = document.getElementById('myInput');
+  var mySpan = document.getElementById('mySpan');
+  var myInput = document.getElementById('myInput');
 
-    myInput.addEventListener('keydown', function(){
-      mySpan.innerText = myInput.value;
-      console.log("Your text is " + mySpan.offsetWidth + " pixels wide!");
-    });
+  myInput.addEventListener('keydown', function(){
+    mySpan.innerText = myInput.value;
+    console.log("Your text is " + mySpan.offsetWidth +
+    " pixels wide!");
+  });
           </code>
         </pre>
         <p>You can use this to do things like adjust webkit-transform rotate properties to follow your input cursor.Woohoo!.</p>
@@ -38,7 +38,7 @@
       </ul>
     </li>
     <li class="post">
-      <ul>
+      <ul class="post">
         <li class="prePost"><!-- <img id="ninja" src="assets/purpleninja.gif"></img> --><span class="date">March 20, 2014</span></li>
         <li class="break"><hr></li>
         <li class="postTitle">Rebinding keys in Ace editor</li>
@@ -48,25 +48,26 @@
              <p>I was trying to prevent default on backspace for certain lines, but it didn't seem to be quite enough.  After hours of investigation, here is the solution I found:</p>
         <pre class="prettyprint code">
           <code class="prettyprint">
-    var editor = ace.edit('your-editors-id-tag');
-    var readOnlyRows = [0,1,2,3];
+  var editor = ace.edit('your-editors-id-tag');
+  var readOnlyRows = [0,1,2,3];
 
-    editor.commands.addCommands([{
-      name: "backspace",
-      bindKey: {
-        win: "Backspace",
-        mac: "Backspace",
-      },
-      exec: function(editor) {
-        if(readOnlyRows.indexOf(editor.getCursorPosition().row) != -1){
-          return false;
-        } else {
-          editor.remove("left");
-        }
-      },
-      multiSelectAction: "forEach",
-      scrollIntoView: "cursor"
-    }]);
+  editor.commands.addCommands([{
+    name: "backspace",
+    bindKey: {
+      win: "Backspace",
+      mac: "Backspace",
+    },
+    exec: function(editor) {
+      if(readOnlyRows.indexOf(editor.getCursorPosition()
+      .row) != -1){
+        return false;
+      } else {
+        editor.remove("left");
+      }
+    },
+    multiSelectAction: "forEach",
+    scrollIntoView: "cursor"
+  }]);
           </code>
         </pre>
         <p>The idea here is that you are overriding the default backspace event in Ace Editor and reimplimenting it with an additional IF statement checking whether to cursor is positioned on a read-only row.
