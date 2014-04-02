@@ -21,8 +21,10 @@ $(document).ready(function(){
         if( offset<=fade2Start ){
             opacity2=0;
         }else if( offset<=fade2Until ){
-            opacity2=(offset-fade2Start)/(fade2Until-offset);
+            console.log(offset);
+            opacity2=(offset-fade2Start)/(fade2Until - fade2Start);
         }
+        console.log("opacity2 is " + opacity2);
         fading2.css('opacity',opacity2);
     });
 
