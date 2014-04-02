@@ -3,7 +3,7 @@ $(document).ready(function(){
     ,fade1Until=400 // 200px scroll or more will equiv to 0 opacity
     ,fading1 = $('#topbar')
     ,fade2Start = 1100
-    ,fade2Until = 2000
+    ,fade2Until = 1700
     ,fading2 = $('#home');
 
     $(window).bind('scroll', function(){
@@ -21,10 +21,8 @@ $(document).ready(function(){
         if( offset<=fade2Start ){
             opacity2=0;
         }else if( offset<=fade2Until ){
-            console.log(offset);
             opacity2=(offset-fade2Start)/(fade2Until - fade2Start);
         }
-        console.log("opacity2 is " + opacity2);
         fading2.css('opacity',opacity2);
     });
 
@@ -32,12 +30,12 @@ $(document).ready(function(){
         $('html, body').animate({
             scrollTop: $("#main").offset().top - 100
         }, 2500, 'swing');
+    });
 
     $('img#home').on('click', function(){
         $('html, body').animate({
             scrollTop: $("#topbar").offset().top - 100
         }, 2000, 'swing');
-    })
     });
 });
 
